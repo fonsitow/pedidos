@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:pedidos/components/custom_app_bar.dart';
 import 'package:pedidos/core/estilos.dart';
 import 'package:pedidos/models/auth.dart';
 import 'package:pedidos/screens/dashboard.dart';
@@ -71,6 +72,7 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: CustomAppBar(),
       body: Center(
         child: Container(
           height: 900,

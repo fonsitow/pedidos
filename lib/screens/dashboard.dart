@@ -5,7 +5,6 @@ import 'package:pedidos/screens/categorias.dart';
 import 'package:pedidos/screens/clientes.dart';
 import 'package:pedidos/screens/pedidos.dart';
 import 'package:pedidos/screens/productos.dart';
-import 'package:sidebarx/sidebarx.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -52,7 +51,7 @@ class _DashboardPageState extends State<DashboardPage> {
                   textAlign: TextAlign.center,
                   style: TextStyle(fontSize: 18),
                 ),
-                subtitle: Image.asset('assets/images/categorias_1.png'),
+                subtitle: Image.asset('assets/images/categorias_.png'),
                 onTap: () {
                   Navigator.push(
                     context,
@@ -102,7 +101,14 @@ class _DashboardPageState extends State<DashboardPage> {
           ),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        splashColor: Colors.red,
+        elevation: 4,
+        backgroundColor: Color(0x85FF0000),
+        foregroundColor: Colors.white,
+        child: Icon(Icons.add),
+      ),
     );
   }
 }
-
