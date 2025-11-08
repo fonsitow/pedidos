@@ -5,6 +5,7 @@ import 'package:pedidos/screens/categorias.dart';
 import 'package:pedidos/screens/clientes.dart';
 import 'package:pedidos/screens/pedidos.dart';
 import 'package:pedidos/screens/productos.dart';
+import 'package:sidebarx/sidebarx.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -104,5 +105,4 @@ class _DashboardPageState extends State<DashboardPage> {
     );
   }
 }
-
 
