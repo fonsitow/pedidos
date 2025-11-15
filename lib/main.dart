@@ -3,9 +3,11 @@ import 'package:pedidos/screens/home.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  
   await Supabase.initialize(
-    url:'https://mmoafjzrxpkosqdnvrdp.supabase.co',
-    anonKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im1tb2FmanpyeHBrb3NxZG52cmRwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjE5OTkxMTUsImV4cCI6MjA3NzU3NTExNX0.d5TaKODASLSL5-qz1UG21By9uEYMDdE9b5Q4WJV6SsE',
+    url:'https://zeqyyfnvgngkgqrbjhaf.supabase.co',
+    anonKey:'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InplcXl5Zm52Z25na2dxcmJqaGFmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjEzNTk3NzMsImV4cCI6MjA3NjkzNTc3M30.fOuD3HL7kEivmlsrIH9z0ga0Tsq7f5mCbWsZBrP8mPQ',
   );
   runApp(MyApp());
 }

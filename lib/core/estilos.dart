@@ -9,3 +9,14 @@ class Styles{
     color: const Color.fromARGB(176, 0, 0, 0)
   );
 }
+
+class Navegacion {
+
+  paginas(Widget page, context){
+  Navigator.push(
+    context, MaterialPageRoute(builder: (context) => page)
+  );
+} 
+
+
+}

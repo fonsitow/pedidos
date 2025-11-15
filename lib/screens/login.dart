@@ -73,15 +73,9 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      body: Center(
-        child: Container(
-          height: 900,
-          width: 500,
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.all(Radius.circular(32)),
-            border: Border.all(color: Colors.black, width: 3),
-          ),
-          child: Column(
+      body: ListView(
+        children: [
+          Column(
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
@@ -94,7 +88,7 @@ class _LoginPageState extends State<LoginPage> {
               boton(context),
             ],
           ),
-        ),
+        ],
       ),
     );
   }
