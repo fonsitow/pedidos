@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:pedidos/components/splashscreen.dart';
 import 'package:pedidos/screens/home.dart';
+import 'package:pedidos/screens/login.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
@@ -61,7 +63,12 @@ class _MyAppState extends State<MyApp> {
       theme: temaClaro,
       darkTheme: temaOscuro,
       themeMode: ThemeMode.system,
-      home: Home(titulo: titulo),
+      initialRoute: '/splash',
+      routes: {
+      '/splash': (context) => const SplashScreen(),
+      '/login': (context) => const LoginPage(),
+      '/home': (context) => const Home(titulo: titulo),
+      },
     );
   }
 }

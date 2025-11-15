@@ -96,7 +96,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
               try {
                 await _client.auth.signOut();
                 // exit(0);
-                SystemNavigator.pop(animated: true);
+                Navigator.pop(context);
               } catch (e) {
                 debugPrint('Ocurrio un error $e');
               }

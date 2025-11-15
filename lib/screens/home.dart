@@ -15,10 +15,8 @@ class Home extends StatefulWidget {
 
 class _HomeState extends State<Home> {
 
-  final Session? session = supabase.auth.currentSession;
-
   @override
   Widget build(BuildContext context) {
-    return Scaffold(body: session != null ? DashboardPage() : LoginPage());
+    return Scaffold(body: DashboardPage());
   }
 }
