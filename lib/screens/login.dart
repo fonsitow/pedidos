@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:pedidos/components/custom_app_bar.dart';
 import 'package:pedidos/core/estilos.dart';
 import 'package:pedidos/models/auth.dart';
+import 'package:pedidos/models/profiles.dart';
 import 'package:pedidos/screens/dashboard.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
@@ -62,7 +63,25 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void navegacion() {
+  Future<Profile> obtenerPerfil(String id) async {
+    final response = await supabase.from('profiles').select('*').eq('id', id);
+    print(response);
+    return Profile(
+      fullname: response[0]['full_name'],
+      username: response[0]['username'],
+      avatarUrl: response[0]['avatarUrl'],
+    );
+  }
+
+  void navegacion(
+    String id,
+    String accessToken,
+    String tokenType,
+    String userEmail,
+  ){
+    obtenerPerfil(id).then((value) {
+
+    },);
     Navigator.push(
       context,
       MaterialPageRoute(builder: (context) => DashboardPage()),
@@ -167,10 +186,14 @@ class _LoginPageState extends State<LoginPage> {
       ),
       onPressed: () async {
         final loginUser = await autenticacion();
-
         if (context.mounted) {
           loginUser.accessToken.isNotEmpty
-              ? navegacion()
+              ? navegacion(
+                  loginUser.id,
+                  loginUser.accessToken,
+                  loginUser.tokenType,
+                  loginUser.userEmail,
+                )
               : ScaffoldMessenger.of(context).showSnackBar(
                   const SnackBar(
                     content: Text('Ingresa tus datos validos porfavor'),

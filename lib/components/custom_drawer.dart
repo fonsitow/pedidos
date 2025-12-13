@@ -95,8 +95,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
             onTap: () async {
               try {
                 await _client.auth.signOut();
-                // exit(0);
-                Navigator.pop(context);
+                exit(0);
               } catch (e) {
                 debugPrint('Ocurrio un error $e');
               }
